@@ -1,4 +1,4 @@
-﻿using CallApp.Infrastruction.Entity;
+﻿using CallApp.Infrastruction.Entity.Database;
 
 namespace CallApp.Infrastruction.Repository.Abstraction
 {

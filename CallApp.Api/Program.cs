@@ -1,12 +1,11 @@
-using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using CallApp.Aplication.Abstractions;
+using CallApp.Infrastruction.Database;
 using CallApp.Aplication.Implemetation;
-using CallApp.Infrastruction;
-using CallApp.Infrastruction.Mapper;
+using CallApp.Infrastruction.Entity.Database;
+using CallApp.Domain.Respons.Models.Impementation;
 using CallApp.Infrastruction.Repository.Abstraction;
 using CallApp.Infrastruction.Repository.Implementation;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +15,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAutoMapper(o =>
+{
+    o.CreateMap<Person, BaseInfoModel>();
+    o.CreateMap<BaseInfoModel, Person>();
+}, AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddDbContext<AldagiDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AldagiDatabase")));

@@ -1,7 +1,7 @@
+using Xunit;
+using System.Reflection;
 using CallApp.Api.Controllers;
 using Microsoft.AspNetCore.Mvc;
-using System.Reflection;
-using Xunit;
 
 namespace Api_Test
 {

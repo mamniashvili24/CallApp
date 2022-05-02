@@ -1,6 +1,6 @@
-﻿using CallApp.Infrastruction.Entity;
-using CallApp.Infrastruction.Mapper;
+﻿using AutoMapper;
 using CallApp.Aplication.Abstractions;
+using CallApp.Infrastruction.Entity.Database;
 using CallApp.Domain.Respons.Data.Abstraction;
 using CallApp.Domain.Respons.Models.Abstraction;
 using CallApp.Domain.Respons.Data.Implementation;
@@ -12,10 +12,12 @@ namespace CallApp.Aplication.Implemetation
     public class ClientService : IClientService
     {
         private readonly IClientRepository _clientRepository;
+        private readonly IMapper _mapper;
 
-        public ClientService(IClientRepository clientRepository)
+        public ClientService(IClientRepository clientRepository, IMapper mapper)
         {
             _clientRepository = clientRepository;
+            _mapper = mapper;
         }
         public IDataResponse<IBaseInfoModel> GetBaseInfo(string phoneNumber)
         {
@@ -30,7 +32,7 @@ namespace CallApp.Aplication.Implemetation
                     };
                 }
                 var person = _clientRepository.GetBaseInfoByPhoneNumber(phoneNumber);
-                var result = Mapping.Map<Person, BaseInfoModel>(person);
+                var result = _mapper.Map<Person, BaseInfoModel>(person);
 
                 return new DataResponse<IBaseInfoModel>()
                 {

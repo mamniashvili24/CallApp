@@ -1,7 +1,7 @@
-﻿using CallApp.Infrastruction.Entity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using CallApp.Infrastruction.Entity.Database;
 
-namespace CallApp.Infrastruction
+namespace CallApp.Infrastruction.Database
 {
     public class AldagiDbContext : DbContext
     {

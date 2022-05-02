@@ -1,4 +1,4 @@
-﻿namespace CallApp.Infrastruction.Entity
+﻿namespace CallApp.Infrastruction.Entity.Database
 {
     public class Person
     {

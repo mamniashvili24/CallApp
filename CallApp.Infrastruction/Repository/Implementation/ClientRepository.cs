@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
-using CallApp.Infrastruction.Entity;
 using Microsoft.EntityFrameworkCore;
+using CallApp.Infrastruction.Database;
+using CallApp.Infrastruction.Entity.Database;
 using CallApp.Infrastruction.Repository.Abstraction;
 
 namespace CallApp.Infrastruction.Repository.Implementation
