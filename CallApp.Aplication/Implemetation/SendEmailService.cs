@@ -7,7 +7,7 @@ namespace CallApp.Aplication.Implemetation
 {
     public class SendEmailService : ISendEmailService
     {
-        public async Task<bool> SendNotificationAsync(EmailModel email)
+        public async Task<bool> SendEmailAsync(EmailModel email)
         {
             var url = "https://privateemail.aldagi.ge/swagger/index.html#/Email/Email_Post";
             var emailInJson = JsonSerializer.Serialize(email);

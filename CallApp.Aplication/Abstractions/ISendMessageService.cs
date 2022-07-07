@@ -2,8 +2,8 @@
 
 namespace CallApp.Aplication.Abstractions
 {
-    public interface ISendEmailService
+    public interface ISendMessageService
     {
-        Task<bool> SendEmailAsync(EmailModel email);
+        Task<bool> SendMessageAsync(MessageModel message);
     }
 }

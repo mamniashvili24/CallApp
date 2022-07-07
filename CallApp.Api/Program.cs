@@ -23,6 +23,8 @@ builder.Services.AddAutoMapper(o =>
     o.CreateMap<BaseInfoModel, Person>();
     o.CreateMap<EmailModel, NotificationModel>();
     o.CreateMap<NotificationModel, EmailModel>();
+    o.CreateMap<CallApp.Api.Model.MessageModel, CallApp.Domain.Respons.Models.Impementation.MessageModel>();
+    o.CreateMap<CallApp.Domain.Respons.Models.Impementation.MessageModel, CallApp.Api.Model.MessageModel>();
 }, AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddDbContext<AldagiDbContext>(options =>
